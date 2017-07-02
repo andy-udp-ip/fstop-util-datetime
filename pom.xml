@@ -3,7 +3,7 @@
   <groupId>tw.com.fstop</groupId>
   <artifactId>fstop-util-datetime</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   
   <name>fstop-util-datetime</name>
   <url>https://github.com/andy-udp-ip/fstop-util-datetime</url>
@@ -59,7 +59,7 @@
 	<connection>scm:git:git@github.com:andy-udp-ip/fstop-util-datetime.git</connection>
 	<url>scm:git:git@github.com:andy-udp-ip/fstop-util-datetime.git</url>
 	<developerConnection>scm:git:git@github.com:andy-udp-ip/fstop-util-datetime.git</developerConnection>
-    <tag>v1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>    
 
   
