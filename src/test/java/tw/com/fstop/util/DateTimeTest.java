@@ -14,7 +14,6 @@
 package tw.com.fstop.util;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 

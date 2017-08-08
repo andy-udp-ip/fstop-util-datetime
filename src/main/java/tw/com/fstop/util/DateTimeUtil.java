@@ -60,7 +60,7 @@ import java.util.TimeZone;
 public class DateTimeUtil
 {
     
-    static String TIMEZONE_ID_UTC = "UTC";
+    static final String TIMEZONE_ID_UTC = "UTC";
     
     /**
      * Get current system timezone id.
