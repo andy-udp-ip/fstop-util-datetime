@@ -61,6 +61,9 @@ public class DateTimeUtil
 {
     
     static final String TIMEZONE_ID_UTC = "UTC";
+    static int ONE_HOUR_SECONDS = 3600;
+    static int ONE_SECOND_MILLIS = 1000;
+    
     
     /**
      * Get current system timezone id.
@@ -91,7 +94,7 @@ public class DateTimeUtil
     public static int getCurrentTimeZoneOffsetHour()
     {
         //milliseconds -> seconds -> hour
-        return getCurrentTimeZoneOffset() / 1000 / 3600;
+        return getCurrentTimeZoneOffset() / ONE_SECOND_MILLIS / ONE_HOUR_SECONDS;
     }
         
     /**
@@ -113,7 +116,7 @@ public class DateTimeUtil
      */
     public static long getCurrentEpochSecond()
     {
-        return (getCurrentEpoch()/1000);
+        return (getCurrentEpoch()/ONE_SECOND_MILLIS);
     }
 
     /**
@@ -126,7 +129,7 @@ public class DateTimeUtil
     {
         TimeZone timeZone = TimeZone.getTimeZone(TIMEZONE_ID_UTC);
         Calendar calendar = Calendar.getInstance(timeZone);
-        long secondsSinceEpoch = calendar.getTimeInMillis()/1000L;
+        long secondsSinceEpoch = calendar.getTimeInMillis()/ONE_SECOND_MILLIS;
         return secondsSinceEpoch;
     }          
     
@@ -168,8 +171,8 @@ public class DateTimeUtil
     }
 
     /**
-     * Get current day.
-     * @return      day
+     * Get current day of month.
+     * @return      day of month
      */
     public static int getCurrentDay()
     {
@@ -179,8 +182,8 @@ public class DateTimeUtil
     }
 
     /**
-     * Get local day.
-     * @return      day
+     * Get local day of month.
+     * @return      day of month
      */
     public static int getLocalDay(String timezoneID)
     {
@@ -212,7 +215,7 @@ public class DateTimeUtil
     public static int getLocalTimeZoneOffsetHour(String timezoneID)
     {
         //milliseconds -> seconds -> hour
-        return getLocalTimeZoneOffset(timezoneID) / 1000 / 3600;
+        return getLocalTimeZoneOffset(timezoneID) / ONE_SECOND_MILLIS / ONE_HOUR_SECONDS;
     }
     
     /**
@@ -233,7 +236,7 @@ public class DateTimeUtil
     public static int getCurrentDaylightSavingOffsetHour()
     {
         //milliseconds -> seconds -> hour
-        return getCurrentDaylightSavingOffset() / 1000 / 3600;
+        return getCurrentDaylightSavingOffset() / ONE_SECOND_MILLIS / ONE_HOUR_SECONDS;
     }
 
     /**
@@ -257,7 +260,7 @@ public class DateTimeUtil
     public static int getLocalDaylightSavingOffsetHour(String timezoneID)
     {
       //milliseconds -> seconds -> hour
-        return getLocalDaylightSavingOffset(timezoneID) / 1000 / 3600;
+        return getLocalDaylightSavingOffset(timezoneID) / ONE_SECOND_MILLIS / ONE_HOUR_SECONDS;
     }
     
     
@@ -279,7 +282,7 @@ public class DateTimeUtil
         calendar.clear();   //clears unused field values
         int m = month - 1;  //adjust month value from one base to zero base
         calendar.set(year, m, day, hour, minute , second);
-        long secondsSinceEpoch = calendar.getTimeInMillis()/1000L;
+        long secondsSinceEpoch = calendar.getTimeInMillis()/ONE_SECOND_MILLIS;
         return secondsSinceEpoch;
     }          
 
@@ -367,7 +370,7 @@ public class DateTimeUtil
      */
     public static String epochSecondToDateString(long epochSecond, String dtFormat)
     {
-        long epoch = epochSecond * 1000L;
+        long epoch = epochSecond * ONE_SECOND_MILLIS;
         return epochToDateString(epoch, dtFormat);
     }
 
@@ -392,7 +395,7 @@ public class DateTimeUtil
      */
     public static String epochSecondToCurrentDateString(long epochSecond, String dtFormat)
     {
-        long epoch = epochSecond * 1000L;
+        long epoch = epochSecond * ONE_SECOND_MILLIS;
         return epochToCurrentDateString(epoch, dtFormat);
     }
     
@@ -419,7 +422,7 @@ public class DateTimeUtil
      */
     public static String epochSecondToLocalDateString(long epochSecond, String dtFormat, String timezoneID)
     {
-        long epoch = epochSecond * 1000L;
+        long epoch = epochSecond * ONE_SECOND_MILLIS;
         return epochToDateString(epoch, dtFormat, timezoneID, timezoneID);
     }
     
@@ -476,7 +479,7 @@ public class DateTimeUtil
     public static long dateStringToEpochSecond(String date, String dtFormat, String fmtTimeZoneID) throws ParseException
     {
         long epoch = dateStringToEpoch(date, dtFormat, fmtTimeZoneID);
-        return epoch / 1000L;
+        return epoch / ONE_SECOND_MILLIS;
     }
     
     /**
@@ -592,8 +595,8 @@ public class DateTimeUtil
      */
     public static int daysBetweenEpochSecond(long epochSecond1, long epochSecond2) throws ParseException
     {
-        long epoch1 = epochSecond1 * 1000L;
-        long epoch2 = epochSecond2 * 1000L;
+        long epoch1 = epochSecond1 * ONE_SECOND_MILLIS;
+        long epoch2 = epochSecond2 * ONE_SECOND_MILLIS;
         return daysBetween(epoch1, epoch2);        
     }
     

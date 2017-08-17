@@ -23,7 +23,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class DateTimeTest
+public class DateTimeUtilTest
 {
     @Before    
     public void setup() 
