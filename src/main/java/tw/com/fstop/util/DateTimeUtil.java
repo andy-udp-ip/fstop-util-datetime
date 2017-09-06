@@ -209,7 +209,7 @@ public class DateTimeUtil
     /**
      * Input timezone id and returns timezone offset value in hour.
      * 
-     * @param timezoneID
+     * @param timezoneID    timezone id
      * @return              timezone offset value in hour
      */
     public static int getLocalTimeZoneOffsetHour(String timezoneID)
@@ -241,7 +241,7 @@ public class DateTimeUtil
 
     /**
      * Input timezone id and returns daylight saving offset value.
-     * @param timezoneID
+     * @param timezoneID    timezone id
      * @return              daylight saving offset value in millisecond
      */
     public static int getLocalDaylightSavingOffset(String timezoneID)
@@ -254,7 +254,7 @@ public class DateTimeUtil
     
     /**
      * Input timezone id and returns daylight saving offset value.
-     * @param timezoneID
+     * @param timezoneID    timezone id
      * @return              daylight saving offset value in hour
      */
     public static int getLocalDaylightSavingOffsetHour(String timezoneID)
@@ -267,12 +267,12 @@ public class DateTimeUtil
     /**
      * Input year, month, day, hour, minute, second and return UTC epoch seconds.
      * 
-     * @param year
+     * @param year      year
      * @param month     month value from 1 to 12
-     * @param day
-     * @param hour
-     * @param minute
-     * @param second
+     * @param day       day of month
+     * @param hour      hour in 24 hours
+     * @param minute    minute
+     * @param second    second
      * @return          epoch seconds
      */
     public static long getEpochSecond(int year, int month, int day, int hour, int minute, int second)
@@ -289,7 +289,7 @@ public class DateTimeUtil
     /**
      * Input datetime string and return UTC epoch seconds.
      * 
-     * @param yyyyMMddhhmiss
+     * @param yyyyMMddhhmiss    date string in yyyyMMddhhmiss formate
      * @return          epoch seconds
      */
     public static long getEpochSecond(String yyyyMMddhhmiss)
@@ -377,7 +377,7 @@ public class DateTimeUtil
     /**
      * Convert utc epoch to current datetime string by specified format.
      * 
-     * @param epoch
+     * @param epoch         epoch in milliseconds
      * @param dtFormat      datetime format
      * @return              formatted datetime string
      */
@@ -434,7 +434,7 @@ public class DateTimeUtil
      * @param dtTimeZoneID          timezone of date
      * @param fmtTimeZoneID         timezone of date format 
      * @return                      epoch millisecond
-     * @throws ParseException
+     * @throws ParseException       date string parse error
      */
     public static long dateStringToEpoch(String date, String dtFormat, String dtTimeZoneID, String fmtTimeZoneID) throws ParseException
     {
@@ -460,7 +460,7 @@ public class DateTimeUtil
      * @param dtFormat          format of date string
      * @param fmtTimeZoneID     timezone of date format
      * @return                  epoch millisecond
-     * @throws ParseException
+     * @throws ParseException   date string parse error
      */
     public static long dateStringToEpoch(String date, String dtFormat, String fmtTimeZoneID) throws ParseException
     {
@@ -474,7 +474,7 @@ public class DateTimeUtil
      * @param dtFormat              format of date string
      * @param fmtTimeZoneID         timezone of date format
      * @return                      epoch second
-     * @throws ParseException
+     * @throws ParseException       date string parse error
      */
     public static long dateStringToEpochSecond(String date, String dtFormat, String fmtTimeZoneID) throws ParseException
     {
@@ -486,8 +486,8 @@ public class DateTimeUtil
      * Calculate days between two dates.
      * Input sequence of the two dates is not important. 
      * 
-     * @param day1
-     * @param day2
+     * @param day1      day to calculate
+     * @param day2      day to calculate
      * @return          days between two dates
      */
     public static int daysBetween(Calendar day1, Calendar day2)
@@ -525,13 +525,13 @@ public class DateTimeUtil
     /**
      * Calculate days between two dates.
      * 
-     * @param day1
-     * @param day2
+     * @param day1              day to calculate
+     * @param day2              day to calculate
      * @param dtFormat          datetime format
      * @param fmtTimeZoneID1    timezone id of day1
      * @param fmtTimeZoneID2    timezone id of day2
      * @return                  days between two dates
-     * @throws ParseException
+     * @throws ParseException   date string parse error
      */
     static int daysBetween(String day1, String day2, String dtFormat, String fmtTimeZoneID1, String fmtTimeZoneID2) throws ParseException
     {
@@ -548,11 +548,11 @@ public class DateTimeUtil
     /**
      * Calculate days between two dates of current timezone.
      * 
-     * @param day1
-     * @param day2
+     * @param day1              day to calculate
+     * @param day2              day to calculate
      * @param dtFormat          datetime format
      * @return                  days between two dates
-     * @throws ParseException
+     * @throws ParseException   date string parse error
      */
     public static int daysBetween(String day1, String day2, String dtFormat) throws ParseException
     {
@@ -570,10 +570,10 @@ public class DateTimeUtil
     /**
      * Calculate days between two epoch dates.
      * 
-     * @param epoch1
-     * @param epoch2
+     * @param epoch1            epoch to calculate
+     * @param epoch2            epoch to calculate
      * @return                  days between two dates
-     * @throws ParseException
+     * @throws ParseException   date string parse error
      */
     public static int daysBetween(long epoch1, long epoch2) throws ParseException
     {
@@ -591,7 +591,7 @@ public class DateTimeUtil
      * @param epochSecond1      epoch seconds
      * @param epochSecond2      epoch seconds
      * @return                  days between two dates
-     * @throws ParseException
+     * @throws ParseException   date string parse error
      */
     public static int daysBetweenEpochSecond(long epochSecond1, long epochSecond2) throws ParseException
     {
