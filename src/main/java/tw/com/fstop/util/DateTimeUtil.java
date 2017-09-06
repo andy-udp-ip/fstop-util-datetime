@@ -196,7 +196,7 @@ public class DateTimeUtil
     
     /**
      * Get current system timezone offset value.
-     * @param tzID  timezone id
+     * @param timezoneID  timezone id
      * @return      timezone offset value in milliseconds
      */
     public static int getLocalTimeZoneOffset(String timezoneID)
