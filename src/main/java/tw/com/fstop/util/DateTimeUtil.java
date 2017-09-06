@@ -25,9 +25,9 @@ import java.util.TimeZone;
  * To avoid class naming collision with other third party class, this class is renamed from DateTime to DateTimeUtil. 
  *
  * 23:59 is the last minute of the day and 00:00 is the first minute of the next day. 
- * Thus, 23:59 on Dec 31, 1999 < 00:00 on Jan 1, 2000 < 00:01 on Jan 1, 2000.
+ * Thus, 23:59 on Dec 31, 1999 &lt; 00:00 on Jan 1, 2000 &lt; 00:01 on Jan 1, 2000.
  * Midnight also belongs to "am", and noon belongs to "pm", 
- * so on the same day, 12:00 am (midnight) < 12:01 am, and 12:00 pm (noon) < 12:01 pm
+ * so on the same day, 12:00 am (midnight) &lt; 12:01 am, and 12:00 pm (noon) &lt; 12:01 pm
  *
  * 時間
  *  GMT: 格林威治標準時間（Greenwich Mean Time） 
@@ -183,6 +183,7 @@ public class DateTimeUtil
 
     /**
      * Get local day of month.
+     * @param timezoneID timezone id
      * @return      day of month
      */
     public static int getLocalDay(String timezoneID)
