@@ -53,6 +53,10 @@ import java.util.TimeZone;
  * 
  * ISO8601 的定義中，19 世紀是指 1900 至 1999 年（包含該年）
  * 格里高利曆的 19 世紀是指 1801 年至 1900 年（包含該年）
+ * 
+ * Note:
+ *   DateFormat implementation is not thread safe!
+ * 
  * </pre>
  * 
  * @since 1.0
